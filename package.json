@@ -5,7 +5,6 @@
     "scripts": {
         "test": "mocha",
         "test:jest": "jest __test__/removeInvisible.test.js",
-        "dev": "vercel dev",
         "test:dev": "npm run dev & sleep 5 && npm test",
         "test:prod": "API_BASE_URL=https://remove-invisible-unicode.vercel.app jest __test__/removeInvisible.test.js"
     },

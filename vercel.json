@@ -1,11 +1,22 @@
 {
-    "version": 2,
-    "builds": [
-      { "src": "api/index.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-      { "src": "/api", "dest": "api/index.js" }
-  
-    ]
-  }
-  
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    },
+    {
+      "source": "/swagger",
+      "destination": "/swagger/index.html"
+    },
+    {
+      "source": "/swagger/:path*",
+      "destination": "/swagger/:path*"
+    },
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}

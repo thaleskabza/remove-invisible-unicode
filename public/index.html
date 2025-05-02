@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Invisible Unicode Cleaner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Invisible Unicode Cleaner</h2>
+    <textarea id="inputText" placeholder="Paste your text with invisible characters..."></textarea>
+    <button onclick="cleanText()">Clean Text</button>
+    <button onclick="injectTestString()" style="background-color: orange;">🧪 Inject Test</button>
+
+    <h3>Cleaned Output:</h3>
+    <textarea id="outputText" readonly></textarea>
+
+    <h4>Invisible Characters Found:</h4>
+    <ul id="invisibleList" style="font-family: monospace;"></ul>
+
+    <h4>Unicode Representation:</h4>
+    <pre id="debugOutput" style="background:#f4f4f4; padding:10px; border-radius:4px;"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

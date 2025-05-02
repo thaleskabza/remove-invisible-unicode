@@ -23,4 +23,4 @@ jobs:
       - name: Run production API tests
         env:
           API_BASE_URL: https://your-vercel-app-url.vercel.app
-        run: npm test
+        run: npm run test:jest 

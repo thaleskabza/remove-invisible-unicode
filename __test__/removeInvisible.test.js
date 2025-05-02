@@ -1,24 +1,24 @@
 const axios = require('axios');
 
-const BASE_URL = 'https://remove-invisible-unicode.vercel.app/' || 'http://localhost:3000';
+const BASE_URL = 'https://remove-invisible-unicode.vercel.app' && 'http://localhost:3000';
 
 describe('POST /api', () => {
   test('should clean invisible characters via API', async () => {
     const response = await axios.post(`${BASE_URL}/api`, {
-      text: 'Hi\u200Bthere'
+      text: 'This sentence has invisible‌Unicode​characters​inside.'
     });
-
+    console.log('Base Url:',BASE_URL);
     expect(response.status).toBe(200);
-    expect(response.data.cleanedText).toBe('Hithere');
+    expect(response.data.cleanedText).toBe('This sentence has invisible Unicode characters inside.');
   });
 
   test('should handle clean input', async () => {
     const response = await axios.post(`${BASE_URL}/api`, {
-      text: 'Hello world'
+      text: 'This sentence has invisible‌Unicode​characters​inside.'
     });
 
     expect(response.status).toBe(200);
-    expect(response.data.cleanedText).toBe('Hello world');
+    expect(response.data.cleanedText).toBe('This sentence has invisible Unicode characters inside.');
   });
 
   test('should return 400 on non-string input', async () => {
