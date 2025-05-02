@@ -22,5 +22,5 @@ jobs:
 
       - name: Run production API tests
         env:
-          API_BASE_URL: https://your-vercel-app-url.vercel.app
+          API_BASE_URL: https://remove-invisible-unicode.vercel.app/
         run: npm run test:jest 

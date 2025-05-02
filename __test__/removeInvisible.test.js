@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const BASE_URL = 'https://remove-invisible-unicode.vercel.app' && 'http://localhost:3000';
+const BASE_URL = 'https://remove-invisible-unicode.vercel.app' || 'http://localhost:3000';
 
 describe('POST /api', () => {
   test('should clean invisible characters via API', async () => {
