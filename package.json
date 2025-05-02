@@ -1,0 +1,31 @@
+{
+    "name": "invisible-unicode-cleaner",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "test": "mocha"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "mocha": "^10.2.0",
+        "chai": "^4.3.7"
+    },
+    "description": "This project provides an API and frontend web application that detects and removes **invisible Unicode characters** (such as zero-width spaces, formatting marks, etc.) commonly used in watermarking, obfuscation, or hidden tracking.",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thaleskabza/remove-invisible-unicode.git"
+    },
+    "keywords": [],
+    "author": "Kabelo",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/thaleskabza/remove-invisible-unicode/issues"
+    },
+    "homepage": "https://github.com/thaleskabza/remove-invisible-unicode#readme"
+}

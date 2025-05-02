@@ -1,0 +1,33 @@
+openapi: 3.0.0
+info:
+  title: Invisible Unicode Cleaner API
+  version: 1.0.0
+paths:
+  /api:
+    post:
+      summary: Remove invisible Unicode characters from text
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  example: "Hello\u200BWorld"
+      responses:
+        '200':
+          description: Cleaned text
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cleanedText:
+                    type: string
+                    example: "HelloWorld"
+        '400':
+          description: Invalid input
+        '405':
+          description: Method not allowed
