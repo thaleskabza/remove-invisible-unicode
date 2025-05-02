@@ -1,19 +1,16 @@
-name: Daily Invisible Unicode Test
+name: Daily Production API Test
 
 on:
   schedule:
-    - cron: '0 10 * * *'  # 12:00 SAST = 10:00 UTC
-  workflow_dispatch:      # Also allow manual trigger
-  push:
-    branches: [main]
+    - cron: '0 10 * * *'  # 12:00 SAST
+  workflow_dispatch:
 
 jobs:
-  run-tests:
+  test-prod:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -23,5 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run unit tests
+      - name: Run production API tests
+        env:
+          API_BASE_URL: https://your-vercel-app-url.vercel.app
         run: npm test
